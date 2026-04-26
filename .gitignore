@@ -8,3 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+data/vector_db/
+*.sqlite3
+*.bin
