@@ -1,0 +1,32 @@
+
+# Backend Framework
+fastapi
+uvicorn
+# Data Validation
+pydantic
+
+# RAG + Agent Framework
+langchain
+groq
+langchain-groq
+langchain-core
+langchain-text-splitters
+langchain-community
+
+# Vector Database
+
+langchain-chroma          # replaces langchain_community.vectorstores.Chroma
+chromadb
+
+# LLM Integration
+langchain-huggingface     # replaces langchain_community HuggingFaceEmbeddings
+sentence-transformers
+# Document Parsing
+docling
+# Frontend (MVP)
+streamlit
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+tqdm
+python-dotenv
+requests
