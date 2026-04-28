@@ -13,10 +13,11 @@ from generate_final_output import generate_final_output
 load_dotenv()
 
 state = SupervisorState(
-    query="Draft a bail application using recent judgments"
+    query="Explain the hindu marriage act and its applicability"
 )
 
 state = classify_intent(state)
+
 state = create_plan(state)
 state = execute_plan(state)
 state = generate_final_output(state)

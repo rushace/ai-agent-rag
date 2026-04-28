@@ -30,3 +30,8 @@ streamlit
 tqdm
 python-dotenv
 requests
+rank_bm25
+
+
+sentence-transformers
+torch

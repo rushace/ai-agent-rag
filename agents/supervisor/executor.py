@@ -5,7 +5,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from state import *
 from utils import extract_document_type, extract_facts
 from agents.tools.document_agent import document_intelligence_agent
-from agents.tools.legal_agent import legal_web_researcher_agent
+from agents.tools.legal_agent.pipeline import legal_rag_pipeline
 from agents.tools.drafter_agent import drafter_agent
 from shared.models import LegalResearchOutput, DocumentAgentOutput, DrafterOutput, LegalResearchInput, DocumentAgentInput, DrafterInput
 
@@ -39,7 +39,7 @@ def execute_plan(state: SupervisorState) -> SupervisorState:
                 needs_web=intent_data.get("needs_web", False)
             )
 
-            result = legal_web_researcher_agent(input_data)
+            result = legal_rag_pipeline(state.query)
 
         # ---------------------------
         # DRAFTER AGENT
@@ -81,7 +81,7 @@ def execute_plan(state: SupervisorState) -> SupervisorState:
         # ---------------------------
         state.intermediate_results.append({
             "step": step.agent,
-            "output": result
+            "output": result["answer"]
         })
 
     return state
